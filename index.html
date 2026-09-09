@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proteja Elas - Solução contra a Violência</title>
+    <style>
+        /* Importando Fonte Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+
+        /* Variáveis de Cores Vibrantes */
+        :root {
+            --roxo-forte: #4A0E4E;
+            --magenta: #E91E63;
+            --rosa-claro: #FCE4EC;
+            --laranja-vibrante: #FF5722;
+            --branco: #FFFFFF;
+            --texto-escuro: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--rosa-claro);
+            color: var(--texto-escuro);
+        }
+
+        /* Cabecalho */
+        header {
+            background: linear-gradient(90deg, var(--roxo-forte), var(--magenta));
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--branco);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--laranja-vibrante);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--laranja-vibrante);
+        }
+
+        /* Seção Hero (Destaque) */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 100px 20px;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png'), 
+                        linear-gradient(135deg, var(--roxo-forte) 0%, var(--magenta) 100%);
+            color: var(--branco);
+            border-bottom-left-radius: 50% 10%;
+            border-bottom-right-radius: 50% 10%;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn-principal {
+            background-color: var(--laranja-vibrante);
+            color: var(--branco);
+            padding: 15px 35px;
+            font-size: 1.2rem;
+            font-weight: 800;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(255, 87, 34, 0.4);
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-principal:hover {
+            transform: translateY(-3px);
+            background-color: #E64A19;
+        }
+
+        /* Seção Sobre a Solução */
+        .solucao {
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .solucao h2 {
+            font-size: 2.5rem;
+            color: var(--roxo-forte);
+            margin-bottom: 40px;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--branco);
+            padding: 30px;
+            border-radius: 20px;
+            width: 300px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--magenta);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card h3 {
+            color: var(--magenta);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        /* Botão de Pânico Fixo */
+        .btn-panico {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #D32F2F;
+            color: var(--branco);
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-align: center;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(211, 47, 47, 0.6);
+            animation: pulsar 1.5s infinite;
+            z-index: 1000;
+        }
+
+        @keyframes pulsar {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+            70% { transform: scale(1.1); box-shadow: 0 0 0 15px rgba(211, 47, 47, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--roxo-forte);
+            color: var(--rosa-claro);
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header { flex-direction: column; gap: 15px; }
+            .hero h1 { font-size: 2rem; }
+            .cards { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">🌸 Proteja <span>Elas</span></div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#solucao">A Solução</a></li>
+                <li><a href="#como-ajudar">Como Ajudar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Destaque -->
+    <main id="inicio">
+        <section class="hero">
+            <h1>Chega de Silêncio. É hora de agir!</h1>
+            <p>O Brasil é um dos países com os maiores índices de violência contra a mulher. Nós criamos uma rede de apoio direta, tecnológica e segura para combater a misoginia e proteger vidas.</p>
+            <button class="btn-principal" onclick="conhecerSolucao()">Conheça o Aplicativo</button>
+        </section>
+
+        <!-- Seção da Solução -->
+        <section id="solucao" class="solucao">
+            <h2>Nossa Solução Direta</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🛡️ Botão SOS Discreto</h3>
+                    <p>Um aplicativo que permite acionar autoridades e contatos de confiança com apenas dois cliques no botão de volume do celular, sem precisar desbloquear a tela.</p>
+                </div>
+                <div class="card">
+                    <h3>⚖️ Apoio Jurídico</h3>
+                    <p>Conexão imediata com advogadas voluntárias prontas para orientar sobre medidas protetivas e direitos da mulher.</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 Rede de Acolhimento</h3>
+                    <p>Mapeamento de abrigos seguros, psicólogas parceiras e grupos de apoio próximos à localização da vítima.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botão de Emergência Flutuante -->
+    <div class="btn-panico" onclick="acionarEmergencia()">SOS<br>180</div>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>Desenvolvido para salvar vidas. Você não está sozinha.</p>
+        <p style="margin-top: 10px; font-size: 0.9em;">Disque 180 - Central de Atendimento à Mulher</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Função para o botão principal
+        function conhecerSolucao() {
+            document.getElementById('solucao').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Função para o botão de pânico
+        function acionarEmergencia() {
+            // Em uma aplicação real, isso poderia abrir o discador de telefone nativo
+            let confirmacao = confirm("ATENÇÃO: Você está prestes a ligar para o 180 (Central de Atendimento à Mulher). Tem certeza?");
+            if (confirmacao) {
+                // Comando para abrir o app de ligação no celular
+                window.location.href = "tel:180";
+                alert("Redirecionando para a central de emergência 180. Fique em um local seguro.");
+            }
+        }
+    </script>
+</body>
+</html>
